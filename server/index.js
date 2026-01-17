@@ -1,3 +1,5 @@
+alert('test')
+
 const express = require('express');
 const app = express();  
 const cors = require('cors');
@@ -23,11 +25,58 @@ app.get('/api/members/:id', (req, res) => {
   }
 });
 
-app.get('/api/members/role/:role')
+//searches by role
+app.get('/api/members/role/:role', (req, res) => {
+  const role = req.params.role; 
+  const filtered = members.filter(member => member[role] === true);
+  res.json(filtered);
+});
+
+//searches by year
+app.get('/api/members/year/:year', (req, res) => {
+  const year = req.params.year;
+  const filtered = members.filter(member => member.year === year);
+  res.json(filtered);
+});
+
+//searches by name
+app.get('/api/members/search/:name', (req, res) => {
+  const searchName = req.params.name.toLowerCase();
+  const filtered = members.filter(member => 
+    member.name.toLowerCase().includes(searchName)
+  );
+  res.json(filtered);
+});
+
+//create a new member 
+app.post('/api/members', (req, res) => {
+  const newMember = req.body;
+
+  //want to validate that the data being sent is useful for the json file and not random
+  if (!newMember.name || newMember.name.trim() === '') {
+    return res.status(400).json({ error: 'Name is required' });
+  };
+  
+  if (!newMember.year || isNaN(newMember.year)) {
+    return res.status(400).json({ error: 'Year must be a number' });
+  }
+
+
+  members.push(newMember);
+
+
+  //even though the array is updated need to reflect those changes in the json file
+  const fs = require('fs')
+  fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
+  
+  //confirming that new member was added succesfully
+  res.status(201).json(newMember);
+});
+
 
 //start Server
 app.listen(
   PORT,
   () => { console.log(`it's live on http://localhost:${PORT}`);
 }
-);
+)
