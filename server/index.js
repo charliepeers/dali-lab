@@ -151,6 +151,19 @@ app.post('/api/members/:memberId/posts/:postId/like', (req, res) => {
   res.json(post);
 });
 
+//get all posts for a specific member. first need to find the member then I can return all there posts
+app.get('/api/members/:id/posts', (req, res) => {
+  const id = parseInt(req.params.id);
+  
+  if (id < 0 || id >= members.length) {
+    return res.status(404).json({ error: 'Member was not found' });
+  }
+  
+  const member = members[id];
+  
+  res.json(member.posts);
+});
+
 //start Server
 app.listen(
   PORT,
