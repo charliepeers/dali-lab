@@ -9,6 +9,10 @@ const fs = require('fs');
 app.use(cors());
 app.use(express.json());
 
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'test? Does you see this?' });
+});
+
 //get all dali members
 app.get('/api/members', (req, res) => {
   res.json(members);
@@ -84,6 +88,29 @@ app.get('/api/setup-posts', (req, res) => {
   res.json({ message: 'Posts array has been added' });
 });
 
+//get all the posts from all members
+app.get('/api/posts', (req, res) => {
+  const allPosts = [];
+  
+  members.forEach(member => {
+    member.posts.forEach(post => {
+      const combinedPost = {
+        id: post.id, // milliseconds since midnight 01/01/1970
+        content: post.content, //what's written inside
+        timestamp: post.timestamp, //the time it was post, more readable data string
+        likes: post.likes, //num. of likes 
+        author: member.name //name of person who posted it
+      };
+      allPosts.push(combinedPost);
+    });
+  });  
+  
+  //newest posts go first in the feed
+  allPosts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+  
+  res.json(allPosts);
+});
+
 //create post for each member
 app.post('/api/members/:id/posts', (req, res) => {
   const id = parseInt(req.params.id);
@@ -113,6 +140,8 @@ app.post('/api/members/:id/posts', (req, res) => {
   
   res.status(201).json(newPost);
 });
+
+
 
 //start Server
 app.listen(
