@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h1>Add New DALI Member</h1>
+  <h1>Add New Member</h1>
 
   <button onclick="addMember()">Add Charlie Peers</button>
   
@@ -38,6 +38,7 @@
       const data = await response.json();
       document.getElementById('result').innerHTML = 
         '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+
     }
   </script>
 

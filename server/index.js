@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const PORT = 3000;
 const members = require('./dali_social_media.json');
+const fs = require('fs'); 
 
 //middleware
 app.use(cors());
@@ -80,6 +81,7 @@ app.get('/api/setup-posts', (req, res) => {
   });
   
   fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
+  res.json({ message: 'Posts array has been added' });
 });
 
 //create post for each member
