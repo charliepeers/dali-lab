@@ -1,5 +1,3 @@
-alert('test')
-
 const express = require('express');
 const app = express();  
 const cors = require('cors');
@@ -73,6 +71,46 @@ app.post('/api/members', (req, res) => {
   res.status(201).json(newMember);
 });
 
+//setting up adding a post
+app.get('/api/setup-posts', (req, res) => {
+  members.forEach(member => {
+    if (!member.posts) {
+      member.posts = [];
+    }
+  });
+  
+  fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
+});
+
+//create post for each member
+app.post('/api/members/:id/posts', (req, res) => {
+  const id = parseInt(req.params.id);
+  const { content } = req.body;
+  
+  //checks to see either content is missing or member does not exist
+  if (!content || content.trim() === '') {
+    return res.status(400).json({ error: 'Cannot be blank' });
+  }
+  
+  if (id < 0 || id >= members.length) {
+    return res.status(404).json({ error: 'Member was not found' });
+  }
+  
+  //create the post
+  const newPost = {
+    id: Date.now(),
+    content: content,
+    timestamp: new Date().toISOString(),
+    likes: 0
+  };
+  
+  members[id].posts.push(newPost);
+  
+  //save to dali json file (2 space indentation for readability)
+  fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
+  
+  res.status(201).json(newPost);
+});
 
 //start Server
 app.listen(

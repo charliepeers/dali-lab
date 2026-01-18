@@ -1,7 +1,47 @@
+<!--Purely for testing-->
 <!DOCTYPE html>
-<html>
-  <title>Quick POST test</title>
-  <body>
-    <button onclick="addMember()"> Add new member</button>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+  <h1>Add New DALI Member</h1>
+
+  <button onclick="addMember()">Add Charlie Peers</button>
+  
+  <div id="result"></div>
+
+  <script>
+    async function addMember() {
+      const newMember = {
+        name: "Charlie Peers",
+        year: "2028",
+        dev: true,
+        des: false,
+        pm: false,
+        core: false,
+        mentor: false,
+        major: "Computer Science"
+      };
+      
+      const response = await fetch('http://localhost:3000/api/members', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newMember)
+      });
+      
+      const data = await response.json();
+      document.getElementById('result').innerHTML = 
+        '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+    }
+  </script>
+
+</body>
 </html>
+
+<body>
