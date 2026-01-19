@@ -3,8 +3,8 @@ import './SidebarSec.css';
 
 function SidebarSec({text, Icon}) {
   return (
-    <div className="SidebarSec">
-      <Icon />
+    <div className="sidebarSec">
+      <Icon className ="sidebarIcon" />
       <h2>{text}</h2>
       
     </div>

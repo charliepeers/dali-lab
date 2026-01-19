@@ -5,9 +5,9 @@ import SidebarSec from "./SidebarSec.jsx";
 
 function Sidebar(){
   return(
-  <div className="sidebar" style={{ backgroundColor: 'lightblue', padding: '20px' }}>
+  <div className="sidebar">
     <SidebarSec Icon={Home} text="Home"/>
-    <SidebarSec Icon={Hash} text="Explore"/>
+    <SidebarSec Icon={Hash}  text="Explore"/>
     <SidebarSec Icon={Bell} text="Notifications"/>
   </div>
 );
