@@ -1,0 +1,22 @@
+.feed{
+  flex:0.4;
+  border-right: 1px solid rgb(177, 177, 177);
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+
+.feedHeader{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background-color: #fafafa;
+  border:1px solid rgb(177, 177, 177);
+  padding: 15px 20px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* no scrollbar on safari and chrome */
+.feed::--webkit-scrollbar{
+  display:none;
+}

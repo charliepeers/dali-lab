@@ -1,21 +1,29 @@
-.sidebar {
+.peepBox {
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  padding:20px;
-  background-color: #fafafa;
-  border-right: 1px solid rgb(177, 177, 177);
-  min-width: 250px;
-  margin-top:20px;
-  flex: 0.3;
-
+  border-bottom: 1px solid rgb(177, 177, 177);
 }
 
-.peepButton {
+.form {
+  display: flex;
+  flex: 1;
+}
+
+.peepBoxInput {
+  border: none;
+  flex: 1;
+  margin-left: 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+.peepBox__peepButton{
   position: relative; 
   overflow: hidden;
   border: 1px solid #FF9500;
   cursor: pointer;
   background-color: #FF9500;
+  color:#fafafa;
   height: 40px;
   width: 220px;
   color: #fafafa;
@@ -26,16 +34,16 @@
   transition: color 0.25s ease;
 }
 
-.peepButton:hover {
+.peepBox__peepButton:hover {
   color: #FF9500;
 }
 
-.peepButton span {
+.peepBox__peepButton span {
   position: relative;
   z-index: 1;
 }
 
-.peepButton::before {
+.peepBox__peepButton::before {
   content: "";
   position: absolute;
   aspect-ratio: 1;
@@ -50,6 +58,7 @@
   z-index: 0;
 }
 
-.peepButton:hover::before {
+.peepBox__peepButton:hover::before {
   transform: translateY(-50%) scale(2);
 }
+
