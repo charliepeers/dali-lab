@@ -9,6 +9,8 @@ function Sidebar(){
     <SidebarSec active Icon={Home} text="Home"/>
     <SidebarSec Icon={Hash}  text="Explore"/>
     <SidebarSec Icon={Bell} text="Notifications"/>
+
+    <button className="peepButton"><span>Peep</span></button>
   </div>
 );
 }

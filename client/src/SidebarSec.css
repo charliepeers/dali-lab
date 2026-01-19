@@ -32,10 +32,6 @@
   color: #FF9500;
 }
 
-.sidebarSec--active .sidebarIcon {
-  color: #FF9500;
-}
-
-.sidebarSec--active h2 {
+.sidebarSec--active{
   color: #FF9500;
 }
