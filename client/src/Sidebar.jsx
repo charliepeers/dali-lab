@@ -6,7 +6,7 @@ import SidebarSec from "./SidebarSec.jsx";
 function Sidebar(){
   return(
   <div className="sidebar">
-    <SidebarSec Icon={Home} text="Home"/>
+    <SidebarSec active Icon={Home} text="Home"/>
     <SidebarSec Icon={Hash}  text="Explore"/>
     <SidebarSec Icon={Bell} text="Notifications"/>
   </div>

@@ -31,3 +31,11 @@
 .sidebarSec:hover h2 {
   color: #FF9500;
 }
+
+.sidebarSec--active .sidebarIcon {
+  color: #FF9500;
+}
+
+.sidebarSec--active h2 {
+  color: #FF9500;
+}
