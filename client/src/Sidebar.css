@@ -5,51 +5,17 @@
   background-color: #fafafa;
   border-right: 1px solid rgb(177, 177, 177);
   min-width: 250px;
-  margin-top:20px;
   flex: 0.3;
 
 }
 
-.peepButton {
-  position: relative; 
-  overflow: hidden;
-  border: 1px solid #FF9500;
-  cursor: pointer;
-  background-color: #FF9500;
-  height: 40px;
-  width: 220px;
-  color: #fafafa;
-  border-radius: 20px;
-  margin-top: 20px;
-  font-weight: 900;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15);
-  transition: color 0.25s ease;
-}
-
-.peepButton:hover {
+.sidebar__logo {
+  display: flex;
+  align-items: center;
   color: #FF9500;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  gap: 8px;
 }
 
-.peepButton span {
-  position: relative;
-  z-index: 1;
-}
-
-.peepButton::before {
-  content: "";
-  position: absolute;
-  aspect-ratio: 1;
-  background: #fafafa;
-  border-radius: 2px;
-  left: -100%;
-  top: 50%;
-  width: 100%;
-  transform: translateY(-50%) scale(1);
-  transform-origin: left center;
-  transition: transform 0.25s ease;
-  z-index: 0;
-}
-
-.peepButton:hover::before {
-  transform: translateY(-50%) scale(2);
-}
