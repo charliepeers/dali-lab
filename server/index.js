@@ -72,19 +72,6 @@ app.post('/api/members', (req, res) => {
   res.status(201).json(newMember);
 });
 
-//setting up adding a post
-app.get('/api/setup-posts', (req, res) => {
-  members.forEach(member => {
-    if (!member.posts) {
-      member.posts = [];
-    }
-  });
-  
-  fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
-  res.json({ message: 'Posts array has been added' });
-});
-
-
 //create post for each member
 app.post('/api/members/:id/posts', (req, res) => {
   const id = parseInt(req.params.id);
@@ -119,14 +106,15 @@ app.post('/api/members/:id/posts', (req, res) => {
 app.get('/api/posts', (req, res) => {
   const allPosts = [];
   
-  members.forEach(member => {
+  members.forEach((member, index) => {
     member.posts.forEach(post => {
       const combinedPost = {
-        id: post.id, // milliseconds since midnight 01/01/1970
+        id: post.id, 
         content: post.content, //what's written inside
         timestamp: post.timestamp, //the time it was post, more readable data string
         likes: post.likes, //num. of likes 
-        author: member.name //name of person who posted it
+        author: member.name,  //name of person who posted it
+        memberId:index 
       };
       allPosts.push(combinedPost);
     });
