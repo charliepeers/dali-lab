@@ -1,0 +1,70 @@
+/* uses flexbox to put avatar and body side by side */
+.post {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid rgb(177,177,177);
+  padding-bottom: 10px;
+}
+
+.post__avatar {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.post__avatar img { /* profile picture styling same as right sidebar */
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;    
+  overflow:hidden;
+}
+
+.post__body {           
+  padding: 10px;
+}
+
+.post__headerText {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.post__headerSpecial {
+  font-weight: normal;
+  font-size: 14px;
+  color: rgb(177, 177, 177);
+}
+
+.post__content {
+  margin: 8px 0;
+}
+
+.post__content p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+.post__footer {
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.post__likeButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;                             
+  cursor: pointer;                       
+  padding: 4px 8px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease; /* smooth tranisiton */
+  color: #666;                           
+}
+
+.post__likeButton:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.post__likeButton--liked {
+  color: #e74c3c;    /* Red color for the filled heart and number */
+}
