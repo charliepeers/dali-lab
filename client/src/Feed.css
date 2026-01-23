@@ -1,22 +1,27 @@
-.feed{
-  flex:0.4;
-  border-right: 1px solid rgb(177, 177, 177);
-  min-width: fit-content;
+.feed {
+  flex: 0.4;
+  height: 100vh;
   overflow-y: scroll;
 }
 
-.feedHeader{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background-color: #fafafa;
-  border:1px solid rgb(177, 177, 177);
-  padding: 15px 20px;
-  font-size:18px;
-  font-weight:bold;
+.feed::-webkit-scrollbar {
+  display: none;
 }
 
-/* no scrollbar on safari and chrome */
-.feed::--webkit-scrollbar{
-  display:none;
+.feedHeader {
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+  border-bottom: 1px solid rgb(177,177,177);
+  padding: 20px 20px;
+  z-index: 100;
+  font-size: 18px;
+  font-weight: 800;
+
+  display: flex;
 }
+
+.homeTitle{
+  font-size: 24px;
+}
+
