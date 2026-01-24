@@ -1,9 +1,21 @@
+require('dotenv').config();
+const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();  
 const cors = require('cors');
 const PORT = 3000;
 const members = require('./dali_social_media.json');
 const fs = require('fs'); 
+const jwt = require('jsonwebtoken');
+
+//there is no fallback here on purpose (could have done || with a hardcoded key as a fallback) instead this forces proper config + more secure
+const JWT_SECRET = process.env.JWT_SECRET;
+
+//helps debug
+if (!JWT_SECRET) {
+  console.error('JWT_SECRET not found in .env file');
+  process.exit(1);
+}
 
 //middleware
 app.use(cors());
@@ -158,3 +170,4 @@ app.listen(
   () => { console.log(`it's live on http://localhost:${PORT}`);
 }
 )
+;

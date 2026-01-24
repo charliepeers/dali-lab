@@ -25,3 +25,8 @@ dist-ssr
 
 todolist.txt
 
+.env
+*.env
+#ignore everything except this file:
+!.env.example 
+
