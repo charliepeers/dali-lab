@@ -37,14 +37,14 @@ function Post({ displayName, userName, text, likes, avatar, timestamp, postId, m
   return (
     <div className="post">
       <div className="post__avatar">
-        {avatar && (
-          <img 
-            src={avatar} 
-            alt={displayName}
-            onError={(e) => { e.target.style.display = 'none'; }}
-          />
-        )}
-      </div>
+        {avatar ? (
+    <img src={avatar} alt={displayName} />
+      ) : (
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="12" fill="#ccc"></circle>
+    </svg>
+    )}
+    </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">

@@ -51,7 +51,7 @@ function RightSidebar({ members }) {
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />
                 ) : (
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none"> //made simple grey default avatar if they have no profile picture
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none"> //made simple grey default avatar if they have no profile picture
                     <circle cx="12" cy="12" r="12" fill="#ccc"></circle>
                   </svg>
                 )}

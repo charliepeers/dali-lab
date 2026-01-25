@@ -1,8 +1,10 @@
 import React, {useState} from 'react'; //import to track what user types
 import './Peepbox.css';
 
-function Peepbox({ onCreatePost }) {
+function Peepbox({ onCreatePost, currentUser }) {
   const [peepText, setPeepText] = useState('');
+
+  console.log("Peepbox currentUser:", currentUser);
 
   //so page doesn't refresh
   const handleSubmit = (e) => {
