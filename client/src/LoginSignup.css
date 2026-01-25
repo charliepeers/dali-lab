@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+  background: #fafafa; 
+  padding-bottom: 30px; 
+  width: 600px;
+  border-radius: 16px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left:60px;
+  gap: 16px; 
+  width: 100%;
+  margin-top: 40px; 
+}
+
+.logo {
+  font-size: 48px;
+  color: #FF9500;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.text { 
+  color: #1a1a1a; 
+  font-size: 32px; 
+  font-weight: 700;
+}
+
+.inputs {
+  margin-top: 32px; 
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 480px;
+  height: 60px; 
+  background: #fafafa;
+  border-radius: 6px; 
+  border: 1px solid #e0e0e0; 
+  transition: border-color 0.2s ease; 
+}
+
+.input:focus-within {
+  border-color: #FF9500;
+  background: #fafafa; 
+}
+
+.input .icon {
+  margin: 0px 16px; 
+  font-size: 20px;
+  color: #797979; 
+  flex-shrink: 0;
+}
+
+.input input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #1a1a1a; 
+  font-size: 17px; 
+  padding-right: 16px;
+}
+
+.input input::placeholder {
+  color: #797979;
+}
+
+.input input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.error-message {
+  background-color: #ffe5e5;
+  color: #d32f2f;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #ffcccc;
+  text-align: center;
+  margin: 16px auto;
+  width: 480px;
+}
+
+.submit-container {
+  display: flex;
+  gap: 30px;
+  margin: 32px auto; 
+  justify-content: center;
+}
+
+.submit {
+  display: flex;
+  cursor:pointer;
+  justify-content: center;
+  align-items: center;
+  width: 480px; 
+  height: 52px; 
+  color: #fafafa;
+  border-radius: 9999px; 
+  font-size: 17px; 
+  font-weight: 700;
+  background: #FF9500;
+  border: none;
+  transition: all 0.2s ease; 
+}
+
+.submit:hover:not(:disabled) {
+  background: #e68600; 
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3); 
+}
+
+.signup {
+  text-align: center; 
+  padding: 0; 
+  color: #797979;
+  font-size: 15px; 
+}
+
+.signup .link {
+  color: #FF9500; 
+  cursor: pointer;
+  font-weight: 600;
+}
