@@ -21,16 +21,121 @@ if (!JWT_SECRET) {
 app.use(cors());
 app.use(express.json());
 
-//get all dali members
-app.get('/api/members', (req, res) => {
-  res.json(members);
+const requireAuth = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader && authHeader.split(' ')[1];
+
+  //check to see if the token exists
+  if (token) {
+    jwt.verify(token, JWT_SECRET, (err, decodedToken) => {
+      if (err) {
+        console.log(err.message);
+        //for API using session storage send a 401 status instead of a redirect
+        res.status(401).json({ error: 'Unauthorized' });
+      } else {
+        console.log(decodedToken);
+        req.user = decodedToken;
+        next();
+      }
+    });
+  } else {
+    //if no token provided
+    res.status(401).json({ error: 'no token provided' });
+  }
+};
+
+app.post('/api/auth/register', async (req, res) => {
+  try {
+    const { name, email, password, year } = req.body; //get the data that the user put in data form
+
+    if (!name || !email || !password || !year) {
+      return res.status(400).json({ error: 'All fields are required' }); //check to see if not blank
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 5); //make sure to scramble the password (done 5 times)
+
+    //new user object
+    const newUser = {
+      id: members.length, 
+      name,
+      email,
+      password: hashedPassword, //not storing the real one instead the hashed version 
+      year: year,
+      picture: '',
+      posts: [],
+      developer: false,
+      designer: false,
+      pm: false,
+      mentor: false
+    };
+
+    //then need to overwrite JSON file
+    members.push(newUser); 
+    fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
+
+    const token = jwt.sign(
+      { id: newUser.id, email: newUser.email, name: newUser.name },
+      JWT_SECRET,
+      { expiresIn: '24h' } //expires in 24 hours, after researched found that they often expire after 5-15 minutes
+    );
+
+    const dataToSend = { //spec. pick what I want to send
+      id: newUser.id,
+      name: newUser.name,
+      email: newUser.email
+  };
+  res.status(201).json({ token, user: dataToSend });
+  }catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+  //login
+  app.post('/api/auth/login', async (req, res) => {
+    try {
+    const { email, password } = req.body;
+
+    //find user
+    const user = members.find(m => m.email === email);
+    if (!user) return res.status(401).json({ error: 'invalid' });
+
+    //compare the passwords
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) return res.status(401).json({ error: 'Invalid credentials' });
+
+    //create new token
+    const token = jwt.sign(
+    { id: user.id, email: user.email, name: user.name },
+    JWT_SECRET,
+    { expiresIn: '24h' }
+    );
+
+    const dataToSend = { //spec. pick what I want to send
+    id: user.id,
+    name: user.name,
+    email: user.email
+  };
+  res.json({ token, user: dataToSend });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+//get all dali members 
+app.get('/api/members', (req, res) => { //updated so that they don't back password
+  const membersWithoutPasswords = members.map(({ password, ...member }) => member);
+  res.json(membersWithoutPasswords);
 });
 
 //get one member name
 app.get('/api/members/:id', (req, res) => {
   const id = parseInt(req.params.id);
   if (id >= 0 && id < members.length) {
-    res.json(members[id]);
+    const { password, ...memberWithoutPassword } = members[id];
+    res.json(memberWithoutPassword);
   } else {
     res.status(404).json({ message: 'Member not found.' });
   }
@@ -77,15 +182,15 @@ app.post('/api/members', (req, res) => {
 
 
   //even though the array is updated need to reflect those changes in the json file
-  const fs = require('fs')
   fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
   
   //confirming that new member was added succesfully
   res.status(201).json(newMember);
 });
 
+//protected routes(below)
 //create post for each member
-app.post('/api/members/:id/posts', (req, res) => {
+app.post('/api/members/:id/posts', requireAuth, (req, res) => { //updated to require auth
   const id = parseInt(req.params.id);
   const { content } = req.body;
   
@@ -139,7 +244,7 @@ app.get('/api/posts', (req, res) => {
 });
 
 //creating the like route (find member, then find post, increase likes, save member array and finally send back the updated post)
-app.post('/api/members/:memberId/posts/:postId/like', (req, res) => {
+app.post('/api/members/:memberId/posts/:postId/like', requireAuth, (req, res) => { //updated for auth
   const memberId = parseInt(req.params.memberId);
   const postId = parseInt(req.params.postId);
 
@@ -168,6 +273,4 @@ app.get('/api/members/:id/posts', (req, res) => {
 app.listen(
   PORT,
   () => { console.log(`it's live on http://localhost:${PORT}`);
-}
-)
-;
+});
