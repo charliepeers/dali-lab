@@ -4,8 +4,6 @@ import './Peepbox.css';
 function Peepbox({ onCreatePost, currentUser }) {
   const [peepText, setPeepText] = useState('');
 
-  console.log("Peepbox currentUser:", currentUser);
-
   //so page doesn't refresh
   const handleSubmit = (e) => {
     e.preventDefault();
