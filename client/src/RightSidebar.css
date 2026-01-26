@@ -86,7 +86,7 @@
   color: rgb(177, 177, 177);
 }
 
-.rightSidebar__followButton {
+.rightSidebar__seeMoreButton {
   background-color: transparent;
   border: 1px solid #FF9500;
   border-radius: 16px;
@@ -96,10 +96,7 @@
   cursor: pointer;
 }
 
-.rightSidebar__followButton.followed {
-  background-color: #FF9500;
-  color: #fafafa;
-}
+
 
 .rightSidebar__showMore {
   display: block;
@@ -108,6 +105,11 @@
   color: #FF9500;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+  border:none;
+  font-size:16px;
+  width: 100%;
+  text-align:left;
+  cursor:pointer;
 }
 
 .rightSidebar__showMore:hover {
