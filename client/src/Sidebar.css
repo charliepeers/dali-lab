@@ -19,3 +19,76 @@
   gap: 8px;
 }
 
+.sidebar__user {
+  margin-top: auto; 
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 30px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar__user:hover {
+  background-color: rgba(246, 143, 0, 0.05);
+}
+
+.sidebar__userAvatar {
+  flex-shrink: 0; 
+}
+
+.sidebar__userAvatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+.sidebar__userInfo {
+  flex: 1; 
+  overflow: hidden; 
+}
+
+.sidebar__userName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.sidebar__userEmail {
+  font-size: 14px;
+  color: rgb(177, 177, 177); 
+  margin: 2px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__logoutButton {
+  flex-shrink: 0; 
+  width: 36px;
+  height: 36px;
+  border-radius: 50%; 
+  border: none;
+  background-color: transparent;
+  color: rgb(177, 177, 177);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.sidebar__logoutButton:hover {
+  background-color: rgba(246, 143, 0, 0.1); 
+  color: #FF9500;
+}
+
+.sidebar__logoutButton:active {
+  background-color: rgba(246, 143, 0, 0.2);
+}
+
