@@ -23,13 +23,7 @@
         "id": 1768745385450,
         "content": "Working on this project",
         "timestamp": "2026-01-18T14:09:45.450Z",
-        "likes": 8
-      },
-      {
-        "id": 1768745399360,
-        "content": "Working on this project",
-        "timestamp": "2026-01-18T14:09:59.360Z",
-        "likes": 0
+        "likes": 14
       }
     ]
   },
@@ -914,5 +908,25 @@
     "fun fact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet vehicula condimentum. Etiam quam neque, auctor a posuere eget, dignissim et massa. Aliquam erat volutpat. Maecenas sed dignissim sapien. In venenatis, turpis imperdiet lobortis gravida, nulla nisl eleifend sapien, in consectetur justo mi at tortor. Suspendisse potenti. Phasellus vehicula odio a magna ultrices vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse at interdum arcu, et sodales augue. Sed elit arcu, efficitur id ex sit amet, tincidunt porttitor dui. Morbi efficitur quam ac ligula tincidunt ultricies. Sed scelerisque viverra nisl. Phasellus mattis nulla vel ipsum ornare, sed auctor mi pharetra.  Nulla vitae bibendum neque, et aliquet odio. Aliquam tincidunt nisi ut orci placerat elementum. Sed sed tincidunt est, in iaculis diam. Phasellus consectetur velit dolor, a scelerisque odio mollis quis. Phasellus gravida ac leo a efficitur. Integer tristique dolor non egestas aliquet. Phasellus arcu justo, pretium non mi quis, viverra bibendum neque. Ut accumsan, turpis eget gravida maximus, quam est consequat mauris, aliquet posuere ligula urna non turpis. Phasellus et rutrum nisl. Suspendisse eu enim congue, pellentesque ante quis, condimentum dui. Mauris pellentesque feugiat sem, vel congue nisi pulvinar eget. Nullam tellus lorem, fringilla vitae posuere eu, egestas vel tortor. Duis sagittis rhoncus nulla ac ornare. Sed tincidunt aliquet ligula, eu dictum magna ornare et.  In pellentesque massa non molestie dictum. In luctus sem non velit vulputate auctor. Pellentesque facilisis urna eu eros consectetur, in consectetur nisl congue. Sed at turpis sem. Mauris dignissim blandit finibus. Maecenas massa dolor, laoreet ut dolor ac, suscipit tincidunt nisi. Fusce elit purus, tempor sit amet dictum ut, bibendum sit amet ipsum. Suspendisse lacinia, ipsum sit amet posuere tempor, orci eros fermentum orci, quis bibendum tortor nisl eu turpis. Suspendisse sollicitudin nec ex ut pharetra. In hac habitasse platea dictumst. Ut vel pellentesque ante. Aenean fringilla semper dui, sed accumsan ligula gravida ac.  Nam luctus pharetra nunc, aliquam mollis purus. In at ante auctor, dapibus neque vel, ornare sem. Nulla tristique, nunc ac hendrerit mattis, est nunc placerat urna, at feugiat lectus orci eget turpis. Vivamus aliquam massa nisl, a fermentum nulla convallis ac. Duis scelerisque pellentesque diam, consectetur sodales lectus bibendum ac. Nam malesuada, libero id luctus mattis, tortor sem porta purus, eget ornare nibh nisl ac orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.  Quisque dapibus tortor ac cursus sodales. Integer nec fermentum nulla, vel elementum ipsum. Nullam auctor, mi aliquet dignissim egestas, ex lorem porttitor nisl, vitae blandit nisl erat porttitor magna. Praesent non velit dictum, elementum risus in, rutrum metus. Donec gravida eleifend lacus, a ultrices velit fringilla id. Phasellus metus lacus, maximus sit amet fermentum sed, vulputate eget erat. Sed id tortor lacinia, varius lorem non, mollis felis. Vestibulum imperdiet nibh nunc, eu dignissim diam facilisis consequat.",
     "picture": "https://api.typeform.com/responses/files/3f41b2a6e5081008a3ccbd50db913d3da9ac3503574266f2c3cb04745dd44838/eric_lu.jpg",
     "posts": []
+  },
+  {
+    "id": 45,
+    "name": "Charlie",
+    "email": "Charlie@gmail.com",
+    "password": "$2b$05$iP8dGGOU7RP1JqNwZUzqoeUf4eba0G7F4gGY0cXL8ym.jnR6VivcS",
+    "year": "2028",
+    "picture": "",
+    "posts": [
+      {
+        "id": 1769367151436,
+        "content": "first peep!",
+        "timestamp": "2026-01-25T18:52:31.436Z",
+        "likes": 0
+      }
+    ],
+    "developer": false,
+    "designer": false,
+    "pm": false,
+    "mentor": false
   }
 ]
