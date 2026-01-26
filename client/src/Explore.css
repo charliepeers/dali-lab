@@ -1,0 +1,113 @@
+.explore {
+  flex: 0.4;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #fafafa;
+}
+
+/*hide scrollbar */
+.explore::-webkit-scrollbar {
+  display: none;
+}
+
+.explore-header {
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+  padding: 20px 20px;
+  z-index: 100;
+  border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.explore-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f1419;
+  margin: 0;
+}
+
+.explore-subtitle {
+  font-size: 13px;
+  color: #536471;
+  margin-top: 4px;
+  font-weight:normal;
+}
+
+/* v. similar to rightsidebar*/
+.member-row {
+  display: flex;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.member-row:hover {
+  background-color: rgb(219, 218, 218, 0.4);;
+}
+
+.member-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.member-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #cfd9de;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  overflow:hidden;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.member-header-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.member-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.member-handle {
+  color: #536471;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* roles */
+.member-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.role-badge {
+  padding: 2px 8px;
+  border-radius: 9999px; 
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.role-dev    { background-color: rgba(255, 149, 0, 0.15); color: #d97f00; }
+.role-des    { background-color: rgba(168, 85, 247, 0.15); color: #9333ea; }
+.role-pm     { background-color: rgba(59, 130, 246, 0.15); color: #2563eb; }
+.role-core   { background-color: rgba(239, 68, 68, 0.15); color: #dc2626; }
+.role-mentor { background-color: rgba(34, 197, 94, 0.15); color: #16a34a; }
