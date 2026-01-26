@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './Feed.css';
 import Peepbox from './Peepbox';
 import Post from './Post';
 
-function Feed({ posts, members, onCreatePost, onLikePost}) {
+function Feed({ posts, members, onCreatePost, currentUser, onLikePost }) {
   const getMemberByName = (name) => {
     return members.find(m => m.name === name);
   }
-
 
   return (
     <div className = "feed">
@@ -18,10 +17,10 @@ function Feed({ posts, members, onCreatePost, onLikePost}) {
       {/* Header */}
 
       {/* Tweet */}
-      <Peepbox onCreatePost={onCreatePost} />
+      <Peepbox onCreatePost={onCreatePost} 
+      currentUser={currentUser}/> {/*pass current user*/}
 
       {/* Post */}
-
       {posts.map((post) => {
         const member = getMemberByName(post.author);
         return (
@@ -36,7 +35,6 @@ function Feed({ posts, members, onCreatePost, onLikePost}) {
             timestamp={post.timestamp}
             likes={post.likes}
             avatar={member?.picture || ''}
-            onLike={() => onLikePost(post.id, post.author)}
           />
         );
       })}
