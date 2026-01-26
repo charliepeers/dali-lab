@@ -164,30 +164,6 @@ app.get('/api/members/search/:name', (req, res) => {
   res.json(filtered);
 });
 
-//create a new member 
-app.post('/api/members', (req, res) => {
-  const newMember = req.body;
-
-  //want to validate that the data being sent is useful for the json file and not random
-  if (!newMember.name || newMember.name.trim() === '') {
-    return res.status(400).json({ error: 'Name is required' });
-  };
-  
-  if (!newMember.year || isNaN(newMember.year)) {
-    return res.status(400).json({ error: 'Year must be a number' });
-  }
-
-
-  members.push(newMember);
-
-
-  //even though the array is updated need to reflect those changes in the json file
-  fs.writeFileSync('./dali_social_media.json', JSON.stringify(members, null, 2));
-  
-  //confirming that new member was added succesfully
-  res.status(201).json(newMember);
-});
-
 //protected routes(below)
 //create post for each member
 app.post('/api/members/:id/posts', requireAuth, (req, res) => { //updated to require auth
@@ -244,7 +220,7 @@ app.get('/api/posts', (req, res) => {
 });
 
 //creating the like route (find member, then find post, increase likes, save member array and finally send back the updated post)
-app.post('/api/members/:memberId/posts/:postId/like', requireAuth, (req, res) => { //updated for auth
+app.post('/api/members/:memberId/posts/:postId/like', (req, res) => {
   const memberId = parseInt(req.params.memberId);
   const postId = parseInt(req.params.postId);
 
