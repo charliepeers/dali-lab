@@ -32,10 +32,6 @@
   max-width: 50px;
 }
 
-.sidebarSec:hover h2 {
-  color: #FF9500;
-}
-
 .sidebarSec--active{
   color: #FF9500;
 }
