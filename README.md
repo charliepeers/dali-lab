@@ -24,44 +24,61 @@ Search - Find members by name
 
 ---
 
-## Setup Instructions ##
-Prereqs:
-Node & NPM Installed
-Mac: brew install node
+# Setup Instructions #
 
-### Installation ###
-1. Clone this repo
-git clone https://github.com/your_github_username/dalibird.git
-cd dalibird
+## Prerequisites ##
+- **Node & NPM Installed**
+- Mac: `brew install node`
 
-2. Install backend dependencies
-cd backend
-npm install
+## Installation ##
 
-3. Generate your JWT secret
-node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
+1. **Clone this repo**
+```bash
+   git clone https://github.com/your_github_username/dalibird.git
+   cd dalibird
+```
 
-4. Create a `.env` file in the backend folder
-JWT_SECRET=paste-your-generated-key-here
-PORT=3000
-NODE_ENV=development
+2. **Install backend dependencies**
+```bash
+   cd backend
+   npm install
+```
 
-5. Start backend server
-npm start
+3. **Generate your JWT secret**
+```bash
+   node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
+```
 
-6. In a new terminal install frontend dependencies
-cd frontend
-npm install
+4. **Create a `.env` file in the backend folder**
+```env
+   JWT_SECRET=paste-your-generated-key-here
+   PORT=3000
+   NODE_ENV=development
+```
 
-7. Start the frontend with
-npm run dev
+5. **Start backend server**
+```bash
+   npm start
+```
 
-8. Visit the link it says it your terminal. 
+6. **In a new terminal, install frontend dependencies**
+```bash
+   cd frontend
+   npm install
+```
 
-### Test Account ###
+7. **Start the frontend**
+```bash
+   npm run dev
+```
+
+8. **Visit the link displayed in your terminal**
+
+## Test Account ##
+
 Create your own account on the sign up page, or use:
-Email: Charlie@gmail.com
-Password: 1234
+- **Email:** `Charlie@gmail.com`
+- **Password:** `1234`
 
 ---
 
@@ -95,32 +112,32 @@ JWT auth - Token generation, verification, protected routes, bcrypt password has
 Session storage - Chose this over localStorage after learning more about security tradeoffs
 React Context - Built AuthContext to manage auth state across different components 
 
-### Resources I Found Helpful ###
-[HTML and CSS Course](https://www.youtube.com/watch?v=G3e-cpL7ofc) 
-[React Course](https://www.youtube.com/watch?v=SqcY0GlETPk&t=163s)
-[SSH Setup](https://www.youtube.com/watch?v=snCP3c7wXw0)
-[Organizing React Projects](https://www.youtube.com/watch?v=UUga4-z7b6s)
-[MERN Stack Explanation](https://www.youtube.com/watch?v=03Ie9ufPJno)
-[MongoDB Crash Course](https://www.youtube.com/watch?v=ofme2o29ngU)
-[Lean JSON](https://www.youtube.com/watch?v=iiADhChRriM&t=183s)
-[REST API Tutorial](https://restfulapi.net/resource-naming/)
-[RESTFUL API Explanation](https://www.youtube.com/watch?v=-MTSQjw5DrM)
-[Arrow Functions Tutorial](https://www.youtube.com/watch?v=h33Srr5J9nY)
-[Link Files](https://www.youtube.com/watch?v=emLHW0VhzeM)
-[Learn Postman](https://www.youtube.com/watch?v=ypKHnRmPOUk)
-[Custom Fonts](https://www.youtube.com/watch?v=AAU25Fo4bFY)
-[React Fonts](https://react-icons.github.io/react-icons/)
-[Fix Boring UIs](https://www.youtube.com/watch?v=wcZ6jSlZqDc)
-[Button Styling](https://ui-buttons.web.app/bubble-right)
-[Split into sections](https://stackoverflow.com/questions/36236075/how-to-split-webpage-into-sections)
-[Cookies vs Local Storage vs Session Storage - YT](https://www.youtube.com/watch?v=GihQAC1I39Q)
-[Cookies vs Local Storage vs Session Storage - StackOverflow(https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
-[JWT Debugger](https://www.jwt.io/)
-[Debounce Text Input](https://stackoverflow.com/questions/42361485/how-long-should-you-debounce-text-input)
-[Firebase Explanation](https://www.youtube.com/watch?v=vAoB4VbhRzM)
-[JWT Token Refresh](https://www.reddit.com/r/node/comments/1pfep49/why_do_we_need_refresh_tokens_in_jwt/#:~:text=Most%20systems%20today%20use%20HTTPS,need%20refresh%20tokens%20in%20JWT)
-[Sign Up Form](https://www.youtube.com/watch?v=8QgQKRcAUvM)
-[Card Component] (https://www.youtube.com/watch?v=DyFhfBK9TgE)
+### Resources I Particularly Found Helpful ###
+1. HTML and CSS Course](https://www.youtube.com/watch?v=G3e-cpL7ofc) 
+2. [React Course](https://www.youtube.com/watch?v=SqcY0GlETPk&t=163s)
+3. [SSH Setup](https://www.youtube.com/watch?v=snCP3c7wXw0)
+4. [Organizing React Projects](https://www.youtube.com/watch?v=UUga4-z7b6s)
+5. [MERN Stack Explanation](https://www.youtube.com/watch?v=03Ie9ufPJno)
+6. [MongoDB Crash Course](https://www.youtube.com/watch?v=ofme2o29ngU)
+7. Lean JSON](https://www.youtube.com/watch?v=iiADhChRriM&t=183s)
+8. REST API Tutorial](https://restfulapi.net/resource-naming/)
+9. [RESTFUL API Explanation](https://www.youtube.com/watch?v=-MTSQjw5DrM)
+10. [Arrow Functions Tutorial](https://www.youtube.com/watch?v=h33Srr5J9nY)
+11. [Link Files](https://www.youtube.com/watch?v=emLHW0VhzeM)
+12. [Learn Postman](https://www.youtube.com/watch?v=ypKHnRmPOUk)
+13. Custom Fonts](https://www.youtube.com/watch?v=AAU25Fo4bFY)
+14. [React Fonts](https://react-icons.github.io/react-icons/)
+15. [Fix Boring UIs](https://www.youtube.com/watch?v=wcZ6jSlZqDc)
+16. [Button Styling](https://ui-buttons.web.app/bubble-right)
+17. [Split into sections](https://stackoverflow.com/questions/36236075/how-to-split-webpage-into-sections)
+18. [Cookies vs Local Storage vs Session Storage - YT](https://www.youtube.com/watch?v=GihQAC1I39Q)
+19. [Cookies vs Local Storage vs Session Storage - StackOverflow](https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
+20. [JWT Debugger](https://www.jwt.io/)
+21. [Debounce Text Input](https://stackoverflow.com/questions/42361485/how-long-should-you-debounce-text-input)
+22. [Firebase Explanation](https://www.youtube.com/watch?v=vAoB4VbhRzM)
+23. [JWT Token Refresh](https://www.reddit.com/r/node/comments/1pfep49/why_do_we_need_refresh_tokens_in_jwt/#:~:text=Most%20systems%20today%20use%20HTTPS,need%20refresh%20tokens%20in%20JWT)
+24. [Sign Up Form](https://www.youtube.com/watch?v=8QgQKRcAUvM)
+25. [Card Component] (https://www.youtube.com/watch?v=DyFhfBK9TgE)
 
 ---
 
@@ -181,7 +198,7 @@ The problem was I could register users and generate tokens, but protected routes
 
 I tried the following: console logging everything (the token was being generated correctly), checking the Authorization header (it was being sent), and verifying the token manually on jwt.io (it was valid). 
 
-The actual issue ended up being I was storing the token in the frontend but not sending it correctly. My fetch request had headers: { 'Authorization': token } instead of headers: { 'Authorization': \Bearer ${token}` }. The backend middleware expected Bearer <token>` format and was splitting on space to extract the token. Without Bearer, it was trying to verify the literal string Bearer as a token.
+The actual issue ended up being I was storing the token in the frontend but not sending it correctly. My fetch request had headers: { 'Authorization': token } instead of headers: { 'Authorization': \Bearer ${token} }. The backend middleware expected Bearer <token> format and was splitting on space to extract the token. Without Bearer, it was trying to verify the literal string Bearer as a token.
 
 I learnt from this that auth needs to have token generation, storage, transmission, and verification all matching. When something breaks, I now check each step individually. 
 
