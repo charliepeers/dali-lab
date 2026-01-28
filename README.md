@@ -113,19 +113,19 @@ Session storage - Chose this over localStorage after learning more about securit
 React Context - Built AuthContext to manage auth state across different components 
 
 ### Resources I Particularly Found Helpful ###
-1. HTML and CSS Course](https://www.youtube.com/watch?v=G3e-cpL7ofc) 
+1. [HTML and CSS Course](https://www.youtube.com/watch?v=G3e-cpL7ofc) 
 2. [React Course](https://www.youtube.com/watch?v=SqcY0GlETPk&t=163s)
 3. [SSH Setup](https://www.youtube.com/watch?v=snCP3c7wXw0)
 4. [Organizing React Projects](https://www.youtube.com/watch?v=UUga4-z7b6s)
 5. [MERN Stack Explanation](https://www.youtube.com/watch?v=03Ie9ufPJno)
 6. [MongoDB Crash Course](https://www.youtube.com/watch?v=ofme2o29ngU)
-7. Lean JSON](https://www.youtube.com/watch?v=iiADhChRriM&t=183s)
-8. REST API Tutorial](https://restfulapi.net/resource-naming/)
+7. [Lean JSON](https://www.youtube.com/watch?v=iiADhChRriM&t=183s)
+8. [REST API Tutorial](https://restfulapi.net/resource-naming/)
 9. [RESTFUL API Explanation](https://www.youtube.com/watch?v=-MTSQjw5DrM)
 10. [Arrow Functions Tutorial](https://www.youtube.com/watch?v=h33Srr5J9nY)
 11. [Link Files](https://www.youtube.com/watch?v=emLHW0VhzeM)
 12. [Learn Postman](https://www.youtube.com/watch?v=ypKHnRmPOUk)
-13. Custom Fonts](https://www.youtube.com/watch?v=AAU25Fo4bFY)
+13. [Custom Fonts](https://www.youtube.com/watch?v=AAU25Fo4bFY)
 14. [React Fonts](https://react-icons.github.io/react-icons/)
 15. [Fix Boring UIs](https://www.youtube.com/watch?v=wcZ6jSlZqDc)
 16. [Button Styling](https://ui-buttons.web.app/bubble-right)
@@ -137,7 +137,7 @@ React Context - Built AuthContext to manage auth state across different componen
 22. [Firebase Explanation](https://www.youtube.com/watch?v=vAoB4VbhRzM)
 23. [JWT Token Refresh](https://www.reddit.com/r/node/comments/1pfep49/why_do_we_need_refresh_tokens_in_jwt/#:~:text=Most%20systems%20today%20use%20HTTPS,need%20refresh%20tokens%20in%20JWT)
 24. [Sign Up Form](https://www.youtube.com/watch?v=8QgQKRcAUvM)
-25. [Card Component] (https://www.youtube.com/watch?v=DyFhfBK9TgE)
+25. [Making Card Component] (https://www.youtube.com/watch?v=DyFhfBK9TgE)
 
 ---
 
@@ -210,7 +210,7 @@ I tried to heavily limit the use of AI because I was learning fundamentals. I wa
 
 When stack overflow didn't have an answer I would describe my situation and ask for explanations.
 
-For instance: "i'm building auth for a React app. I need to store the jwt token on the client. What are the tradeoffs between session storage local storage and cookies? Which one is more secure and why?
+For instance: "i'm building auth for a React app. I need to store the jwt token on the client. What are the tradeoffs between session storage local storage and cookies? Which one is more secure and why?"
 
 After the AI's explanation I chose session storage.
 
