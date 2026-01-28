@@ -112,7 +112,7 @@ JWT auth - Token generation, verification, protected routes, bcrypt password has
 Session storage - Chose this over localStorage after learning more about security tradeoffs
 React Context - Built AuthContext to manage auth state across different components 
 
-### Resources I Particularly Found Helpful ###
+### Resources I Particularly Found Helpful: ###
 1. [HTML and CSS Course](https://www.youtube.com/watch?v=G3e-cpL7ofc) 
 2. [React Course](https://www.youtube.com/watch?v=SqcY0GlETPk&t=163s)
 3. [SSH Setup](https://www.youtube.com/watch?v=snCP3c7wXw0)
@@ -137,7 +137,6 @@ React Context - Built AuthContext to manage auth state across different componen
 22. [Firebase Explanation](https://www.youtube.com/watch?v=vAoB4VbhRzM)
 23. [JWT Token Refresh](https://www.reddit.com/r/node/comments/1pfep49/why_do_we_need_refresh_tokens_in_jwt/#:~:text=Most%20systems%20today%20use%20HTTPS,need%20refresh%20tokens%20in%20JWT)
 24. [Sign Up Form](https://www.youtube.com/watch?v=8QgQKRcAUvM)
-25. [Making Card Component] (https://www.youtube.com/watch?v=DyFhfBK9TgE)
 
 ---
 
@@ -181,9 +180,7 @@ Session storage over localStorage. After researching on stack overflow, I chose 
 
 ### Biggest Technical Tradeoffs ###
 
-1. JSON file storage as opposed to MongoDB. JSON is simple and works for a demo with less than 100 members. But it has some cons: if two users post at the exact same millisecond, Date.now() gives them identical IDs, every write rewrites the entire file (fs.writeFileSync) and there is no query optimization (I'm loading everything into memory). 
-
-I chose JSON because I wanted to focus on learning API fundamentals without database configuration overhead. The code is structured so migrating to MongoDB only requires changing how I read/write data in index.js (my routes and frontend stay the same).
+1. JSON file storage as opposed to MongoDB. JSON is simple and works for a demo with less than 100 members. But it has some cons: if two users post at the exact same millisecond, Date.now() gives them identical IDs, every write rewrites the entire file (fs.writeFileSync) and there is no query optimization (I'm loading everything into memory). I ending choosing JSON because I wanted to focus on learning API fundamentals without database configuration overhead. The code is structured so migrating to MongoDB only requires changing how I read/write data in index.js (my routes and frontend stay the same).
 
 2. JWT with 24 hour expiration. I set tokens to expire after 24 hours. Industry standard is often 5 15 minutes with refresh tokens. I chose longer expiration because: simpler implementation (no refresh token logic), better UX for the people reviewing my code (won't get logged out mid testing) and acceptable security for a non production app. In production, I'd add refresh tokens.
 
@@ -236,7 +233,7 @@ Unlike functionality. Right now you can only add likes, not remove them. The UI 
 
 ## Acknowledgments ##
 
-Thanks to Henry, Keiran, Carson, and Alejandro for their help during DALI office hours. 
+Thanks to Alejandro, Carson, Henry, and Keiran for their help during DALI office hours. 
 
 
 
